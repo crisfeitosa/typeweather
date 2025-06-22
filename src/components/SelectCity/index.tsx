@@ -36,18 +36,18 @@ export function SelectCity({ onSelect }: Props) {
       <Input
         isLoading={isLoading}
         placeholder="Buscar local"
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
       />
 
       <div className='select-list'>
-        {
-          city.length > 0 &&
-          city.map((item) => (
-            <button type="button" key={item.id} onClick={() => onSelect(item)}>
-              <p>{item.name}</p>
-            </button>
-          ))
-        }
+      {
+        city.length > 0 &&
+        city.map((item: CityProps) => (
+        <button type="button" key={item.id} onClick={(): void => onSelect(item)}>
+          <p>{item.name}</p>
+        </button>
+        ))
+      }
       </div>
     </div>
   )
