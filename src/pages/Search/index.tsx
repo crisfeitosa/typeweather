@@ -8,7 +8,7 @@ export function Search() {
   const navigate = useNavigate();
 
   function handleSelected(city: CityProps) {
-    localStorage.setItem('@typewheather:city', JSON.stringify(city));
+    localStorage.setItem('@typeweather:city', JSON.stringify(city));
     navigate('/dashboard');
   }
 
